@@ -19,6 +19,12 @@ if len(n) > 0:
 	st.markdown(title, unsafe_allow_html=True)
 
 
+# Add a blank line
+st.write("")
+
+# Add a horizontal line
+#st.markdown("<hr>", unsafe_allow_html=True)
+
 #is_clicked = st.button("Click Me")
 
 #st.image("finalPanda.png", caption=' ')
@@ -67,28 +73,22 @@ ep1 = """• Mellisa, Jaden, Mei, and Diego received an acceptance letter for a 
 ep1b="""1. Able to introduce oneself including basic information about name, grade year, major, hometown, likes, and future career. <br><br>2. Able to ask others about name, grade, major, homework, likes, and future career, and nationalities. <br><br>3. Make suggestion to do something together."""
 
 data = [
-    ['Episode 1: The Dream Begins', ep1, ep1b, "", ""],
-    ['Episode 2: Orientation Day', "", "", "", ""],
-    ['Episode 3: Kick off Meeting', "", "", "", ""],
-    ['Episode 4: Job Training', "", "", "", ""]
+    ['Episode 1: The Dream Begins', ep1, ep1b],
+    ['Episode 2: Orientation Day', "", ""],
+    ['Episode 3: Kick off Meeting', "", ""],
+    ['Episode 4: Job Training', "", ""]
 ]
-headers = [" ", "Episodes",
-           "<div style='text-align: center'>Storyline</div>", "Learning Outcomes", "Topics and Subtopics"]
+headers = ["Episodes",
+           "<div style='text-align: center'>Storyline</div>",
+           "<div style='text-align: center'>Image</div>"]  # Include header for the third column
+
 df = pd.DataFrame(data, columns=headers)
 
 # Generate HTML markup for the table
 html_table = df.to_html(index=False, escape=False)
 
-# Apply custom CSS to hide row numbers
-custom_css = """
-<style>
-/* Hide row numbers */
-table.dataframe tr th:first-child {
-    display: none;
-}
-</style>
-"""
+
 
 # Display the table with custom CSS
 st.write(html_table, unsafe_allow_html=True)
-st.markdown(custom_css, unsafe_allow_html=True)
+#st.markdown(custom_css, unsafe_allow_html=True)
