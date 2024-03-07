@@ -63,11 +63,14 @@ import pandas as pd
 
 ep1 = """• Mellisa, Jaden, Mei, and Diego received an acceptance letter for a cyber security internship from an International Company in Hong Kong. The internship program director Lily created a WeChat Group and each of interns posted a self-introduction to the group chat.<br><br>• They all share their passion for cybersecurity and their interest in learning Chinese language and culture. They also are excited to meet with other interns."""
 
+
+ep1b="""1. Able to introduce oneself including basic information about name, grade year, major, hometown, likes, and future career. <br><br>2. Able to ask others about name, grade, major, homework, likes, and future career, and nationalities. <br><br>3. Make suggestion to do something together."""
+
 data = [
-    ['Episode 1: The Dream Begins', ep1, "", "", ""],
-    ['Episode 2: Orientation Day', 30, "", "", ""],
-    ['Episode 3: Kick off Meeting', 35, "", "", ""],
-    ['Episode 4: Job Training', 35, "", "", ""]
+    ['Episode 1: The Dream Begins', ep1, ep1b, "", ""],
+    ['Episode 2: Orientation Day', "", "", "", ""],
+    ['Episode 3: Kick off Meeting', "", "", "", ""],
+    ['Episode 4: Job Training', "", "", "", ""]
 ]
 headers = [" ", "Episodes",
            "<div style='text-align: center'>Storyline</div>", "Learning Outcomes", "Topics and Subtopics"]
