@@ -28,12 +28,12 @@ def main():
     st.image("panda.png", caption=' ')
     
     # Button to show WeChat
-    if st.button("See WeChat Transcript"):
-        st.markdown(weChat, unsafe_allow_html=True)
+    #if st.button("See WeChat Transcript"):
+    #    st.markdown(weChat, unsafe_allow_html=True)
 
     # Button to see vocab pdf
-    if st.button("See Unit1 Vocabulary"):
-        displayPDF("vocab_unit1_1.pdf")
+    #if st.button("See Unit1 Vocabulary"):
+    #    displayPDF("vocab_unit1_1.pdf")
     # Button to trigger playing the MP3 file
     if st.button("See Conversation Between Melissa and Doug"):
         #audio_file = open('file.mp3', 'rb')
