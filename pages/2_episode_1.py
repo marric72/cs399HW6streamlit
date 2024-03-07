@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from playsound import playsound
+
 
 #Write text to the screen
 #original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
@@ -48,11 +50,11 @@ def main():
 
     # Button to trigger playing the MP3 file
     if st.button("Play"):
-        #playsound("chatMelissaAndDoug.mp3") 
-        audio_file = "chatMelissaAndDoug.mp3"  # Replace with the path to your MP3 file
-        caption = "Your MP3 is playing!"
-        audio_html = generate_audio_html(audio_file, caption)
-        st.markdown(audio_html, unsafe_allow_html=True)
+        playsound("chatMelissaAndDoug.mp3") 
+        #audio_file = "chatMelissaAndDoug.mp3"  # Replace with the path to your MP3 file
+        #caption = "Your MP3 is playing!"
+        #audio_html = generate_audio_html(audio_file, caption)
+        #st.markdown(audio_html, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
