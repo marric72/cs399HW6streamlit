@@ -1,15 +1,36 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import base64
 
 title = '<p style="font-family:Courier; color:Blue; font-size: 30px;">Episode 1</p>'
 st.markdown(title, unsafe_allow_html=True)
+
+def displayPDF(file):
+    # Opening file from file path
+    with open(file, "rb") as f:
+        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+
+    # Embedding PDF in HTML
+    #pdf_display = F'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">'
+    pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+
+    # Displaying File
+    st.markdown(pdf_display, unsafe_allow_html=True)
+
 
 # Streamlit app
 def main():
     st.title("Conversation with Melissa and Doug")
     st.image("panda.png", caption=' ')
+    
+    # Button to show WeChat
+    if st.button("See WeChat Transcript"):
+        st.markdown(weChat, unsafe_allow_html=True)
 
+    # Button to see vocab pdf
+    if st.button("See Unit1 Vocabulary"):
+        displayPDF("vocab_unit1_1.pdf")
     # Button to trigger playing the MP3 file
     if st.button("See Conversation Between Melissa and Doug"):
         audio_file = open('file.mp3', 'rb')
@@ -42,9 +63,10 @@ def main():
 
 你好！我姓张，叫张笛。我也是大三的学生。我的专业是网络安全。我是休斯顿人，我喜欢做饭和旅行。我希望将来做网络安全工作。 """
 
-    # Button to trigger playing the MP3 file
-    if st.button("See WeChat Transcript"):
-        st.markdown(weChat, unsafe_allow_html=True)
+ 
+
+
+
 if __name__ == "__main__":
     main()
 
