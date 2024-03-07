@@ -2,60 +2,49 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-
-
-#Write text to the screen
-#original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
-#st.markdown(original_title, unsafe_allow_html=True)
-
 title = '<p style="font-family:Courier; color:Blue; font-size: 30px;">Episode 1</p>'
 st.markdown(title, unsafe_allow_html=True)
-
-#write user input to screen
-#n=st.text_input("Enter name")
-#if len(n) > 0:
-#    st.write(f"Hello {n}")
-
-
-#is_clicked = st.button("Click Me")
-
-st.image("panda.png", caption=' ')
-
-
-#st.write(f"Graph Test")
-#data=pd.DataFrame(np.random.randn(20,3),
-#                  columns=["a","b", "c"])
-#st.bar_chart(data)
-#st.line_chart(data)
-#st.write(str(data))
-#scenario_title='<p style="font-family:Courier; color:Blue; font-size: 20px;">Scenario</p>'
-#st.write(scenario_title, unsafe_allow_html=True)
-
-import streamlit as st
-
-# Function to generate HTML code for playing audio
-def generate_audio_html(audio_file, caption):
-    audio_html = f'''
-    <audio controls>
-        <source src="{audio_file}" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <p>{caption}</p>
-    '''
-    return audio_html
 
 # Streamlit app
 def main():
     st.title("Conversation with Melissa and Doug")
+    st.image("panda.png", caption=' ')
 
     # Button to trigger playing the MP3 file
-    if st.button("Play"):
-        #playsound("chatMelissaAndDoug.mp3") 
-        audio_file = "chatMelissaAndDoug.mp3"  # Replace with the path to your MP3 file
-        caption = "Your MP3 is playing!"
-        audio_html = generate_audio_html(audio_file, caption)
-        st.markdown(audio_html, unsafe_allow_html=True)
+    if st.button("See Conversation Between Melissa and Doug"):
+        audio_file = open('file.mp3', 'rb')
+        audio_bytes = audio_file.read()
+        st.audio(audio_bytes, format='audio/mpeg')
 
+    weChat="""Unit 1 Part I: Self-introduction WeChat Posts 
+
+周萌的自我介绍 
+
+你好，我姓周，叫周萌。我是大一的学生，我的专业是亚洲研究。我是加州人， 喜欢玩电脑 游戏。   我希望将来做亚洲研究工作。　                              
+
+                       
+
+王杰丹的自我介绍 
+
+大家好！我姓王，叫王杰丹。我是大三的学生，我的专业是 
+
+中文。我是纽约人，很喜欢打篮球，也喜欢唱歌。我希望将来在中国工作。　 
+
+ 
+
+李梅的自我介绍 
+
+你好！我姓李，叫李梅。 我是大二的学生，我的专业是软件工程。我是丹佛人，喜欢社交媒体。我希望将来做软件工程师的工作。 
+
+ 
+
+张笛的自我介绍 
+
+你好！我姓张，叫张笛。我也是大三的学生。我的专业是网络安全。我是休斯顿人，我喜欢做饭和旅行。我希望将来做网络安全工作。 """
+
+    # Button to trigger playing the MP3 file
+    if st.button("See WeChat Transcript"):
+        st.markdown(weChat, unsafe_allow_html=True)
 if __name__ == "__main__":
     main()
 
