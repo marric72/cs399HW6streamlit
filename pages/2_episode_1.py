@@ -6,6 +6,9 @@ import base64
 title = '<p style="font-family:Courier; color:Blue; font-size: 30px;">Episode 1</p>'
 st.markdown(title, unsafe_allow_html=True)
 
+audio_file = open('file.mp3', 'rb')
+audio_bytes = audio_file.read()
+
 def displayPDF(file):
     # Opening file from file path
     with open(file, "rb") as f:
@@ -33,8 +36,8 @@ def main():
         displayPDF("vocab_unit1_1.pdf")
     # Button to trigger playing the MP3 file
     if st.button("See Conversation Between Melissa and Doug"):
-        audio_file = open('file.mp3', 'rb')
-        audio_bytes = audio_file.read()
+        #audio_file = open('file.mp3', 'rb')
+        #audio_bytes = audio_file.read()
         st.audio(audio_bytes, format='audio/mpeg')
 
     weChat="""Unit 1 Part I: Self-introduction WeChat Posts 
