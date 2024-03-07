@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import base64
 
-title = '<p style="font-family:Courier; color:Blue; font-size: 30px;">Episode 1</p>'
+title = ' <p style="font-family:Courier; color:Blue; font-size: 30px;">Episode 1</p>'
 st.markdown(title, unsafe_allow_html=True)
 
 audio_file = open('file.mp3', 'rb')
