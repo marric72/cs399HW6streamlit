@@ -51,10 +51,10 @@ def main():
     # Button to trigger playing the MP3 file
     if st.button("Play"):
         #playsound("chatMelissaAndDoug.mp3") 
-        #audio_file = "chatMelissaAndDoug.mp3"  # Replace with the path to your MP3 file
-        #caption = "Your MP3 is playing!"
-        #audio_html = generate_audio_html(audio_file, caption)
-        #st.markdown(audio_html, unsafe_allow_html=True)
+        audio_file = "chatMelissaAndDoug.mp3"  # Replace with the path to your MP3 file
+        caption = "Your MP3 is playing!"
+        audio_html = generate_audio_html(audio_file, caption)
+        st.markdown(audio_html, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
